@@ -1,0 +1,48 @@
+[build-systen]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+authors = [
+    {name = "some Torn person"}
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "click",
+    "flask",
+    "mongoengine",
+    "redis",
+]
+description = "Extension description"
+keywords = ["keyword one", "keyword two"]
+license = {file = "LICENSE"}
+name = "tornium_extension_name"
+version = "0.1.0"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "bandit",
+]
+jupyter = [
+    "ipympl",
+    "jupyter",
+    "matplotlib"
+]
+
+[project.urls]
+homepage = "https://tornium.com"
+repository = "https://github.com/dssecret/tornium-extension-template"
+changelog = "https://github.com/dssecret/tornium-extension-template/blob/master/CHANGELOG.adoc"
+
+[tool.black]
+line-length = 120
+
+[tool.bandit]
+exclude_dirs = ["./.git", "__pycache__", "./venv"]
